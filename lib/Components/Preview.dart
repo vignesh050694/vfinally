@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class PreviewImage extends StatelessWidget {
-  PreviewImage({@required this.image,this.titleImage, this.onPress});
+  PreviewImage({@required this.image,this.titleImage, this.onPress,this.colors});
 
   final String image;
   final String titleImage;
   final Function onPress;
+  final int colors;
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +16,21 @@ class PreviewImage extends StatelessWidget {
           padding: const EdgeInsets.all(3.0),
           child: Stack(
             children: <Widget>[
-              CircleAvatar(
-                radius: 50,
-                backgroundImage: AssetImage(image),
+              Container(
+                width: 100.0,
+                height: 100.0,
+                decoration: new BoxDecoration(
+                  color: const Color(0xff7c94b6),
+                  image: new DecorationImage(
+                    image: AssetImage(image),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: new BorderRadius.all(new Radius.circular(50.0)),
+                  border: new Border.all(
+                    color:  Colors.redAccent,
+                    width: 1.5,
+                  ),
+                ),
               ),
               Positioned(
                 top: 60,
@@ -29,6 +42,21 @@ class PreviewImage extends StatelessWidget {
                   width: 120,
                 ),
               )
+              /*  CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage(image),
+                backgroundColor: Colors.white,
+              ),
+              Positioned(
+                top: 60,
+                left: 2,
+                right: 2,
+                child: Image(
+                  image: AssetImage(titleImage),
+                  height: 40,
+                  width: 120,
+                ),
+              ) */
             ],
           )),
     );
