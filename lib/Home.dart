@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<String> images = List<String>();
+  int _currentIndex = 0;
 
   @override
   void initState() {
@@ -19,13 +20,40 @@ class _HomePageState extends State<HomePage> {
     images.add("asset/doc.jpg");
     images.add("asset/friend.jpg");
     images.add("asset/travel.jpg");
-
   }
+
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('VFinally'),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: onTabTapped, //
+        currentIndex: _currentIndex, //
+        unselectedItemColor: Colors.grey,
+        selectedItemColor: Colors.white,
+        showUnselectedLabels: true,
+        backgroundColor: Color(0xFF000000),
+        iconSize: 18.0,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Home'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            title: Text('Search'),
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.more_horiz), title: Text('More')),
+        ],
       ),
       body: SingleChildScrollView(
         child: Stack(
@@ -105,6 +133,48 @@ class _HomePageState extends State<HomePage> {
                           Navigator.pushNamed(context, '/detail');
                         },
                       ),
+                      PreviewImage(
+                        image: "asset/banner.jpg",
+                        titleImage: "asset/delivery.png",
+                        onPress: () {
+                          Navigator.pushNamed(context, '/detail');
+                        },
+                      ),
+                      PreviewImage(
+                        image: "asset/travel.jpg",
+                        titleImage: "asset/delivery.png",
+                        onPress: () {
+                          Navigator.pushNamed(context, '/detail');
+                        },
+                      ),
+                      PreviewImage(
+                        image: "asset/banner.jpg",
+                        titleImage: "asset/delivery.png",
+                        onPress: () {
+                          Navigator.pushNamed(context, '/detail');
+                        },
+                      ),
+                      PreviewImage(
+                        image: "asset/travel.jpg",
+                        titleImage: "asset/delivery.png",
+                        onPress: () {
+                          Navigator.pushNamed(context, '/detail');
+                        },
+                      ),
+                      PreviewImage(
+                        image: "asset/banner.jpg",
+                        titleImage: "asset/delivery.png",
+                        onPress: () {
+                          Navigator.pushNamed(context, '/detail');
+                        },
+                      ),
+                      PreviewImage(
+                        image: "asset/travel.jpg",
+                        titleImage: "asset/delivery.png",
+                        onPress: () {
+                          Navigator.pushNamed(context, '/detail');
+                        },
+                      ),
                     ],
                   ),
                 ),
@@ -118,9 +188,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-               PlayList(
-                 images: images,
-               ),
+                PlayList(
+                  images: images,
+                ),
                 Container(
                   margin: EdgeInsets.only(top: 13.0),
                   child: Align(

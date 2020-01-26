@@ -13,12 +13,12 @@ class PreviewImage extends StatelessWidget {
     return GestureDetector(
       onTap: onPress,
       child: Padding(
-          padding: const EdgeInsets.all(3.0),
+          padding: const EdgeInsets.fromLTRB(3, 3, 3, 0),
           child: Stack(
             children: <Widget>[
               Container(
-                width: 100.0,
-                height: 100.0,
+                width: 80.0,
+                height: 80.0,
                 decoration: new BoxDecoration(
                   color: const Color(0xff7c94b6),
                   image: new DecorationImage(
@@ -33,7 +33,7 @@ class PreviewImage extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 60,
+                top: 40,
                 left: 2,
                 right: 2,
                 child: Image(

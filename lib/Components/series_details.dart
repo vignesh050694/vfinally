@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vfinally/Components/DetailsContainer.dart';
 
 class SeriesDetails extends StatefulWidget {
   @override
@@ -35,160 +36,24 @@ class _HomePageState extends State<SeriesDetails> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 10.0, left: 0),
+                  margin: EdgeInsets.only(top: 0.0, left: 0),
                   child: Column(
                     children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Expanded(
-                            flex: 8,
-                            child: Stack(children: <Widget>[
-                              SizedBox(
-                                height: 80,
-                                child: Image(
-                                  image: AssetImage("asset/banner.jpg"),
-                                ),
-                              ),
-                            ]),
-                          ),
-                          Expanded(
-                            flex: 10,
-                            child: Text(
-                              '1. Yar Kolaigaran',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.grey[300],
-                                  fontSize: 16),
-                            ),
-                          ),
-                        ],
+                      DetailsContainer(
+                        image: "asset/banner.jpg",
+                        title: '1. Yar Kolaigaran',
                       ),
-                      Row(
-                        children: <Widget>[
-                          Flexible(
-                            child: Text(
-                              "Finally is basically, physically, mentally namma entertainment channel that presents whatever that we find it awesome in daily life.",
-                              style: TextStyle(
-                                height: 1.3,
-                                fontWeight: FontWeight.w100,
-                              ),
-                            ),
-                          ),
-                        ],
+                      DetailsContainer(
+                        image: "asset/doc.jpg",
+                        title: '2. Doctor MBBS',
                       ),
-                      Row(
-                        children: <Widget>[
-                          Expanded(
-                            flex: 8,
-                            child: Stack(children: <Widget>[
-                              SizedBox(
-                                height: 80,
-                                child: Image(
-                                  image: AssetImage("asset/doc.jpg"),
-                                ),
-                              ),
-                            ]),
-                          ),
-                          Expanded(
-                            flex: 10,
-                            child: Text(
-                              '2. Doctor MBBS',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.grey[300],
-                                  fontSize: 16),
-                            ),
-                          ),
-                        ],
+                      DetailsContainer(
+                        image: "asset/friend.jpg",
+                        title: '3. Friends',
                       ),
-                      Row(
-                        children: <Widget>[
-                          Flexible(
-                            child: Text(
-                              "Finally is basically, physically, mentally namma entertainment channel that presents whatever that we find it awesome in daily life.",
-                              style: TextStyle(
-                                height: 1.3,
-                                fontWeight: FontWeight.w200,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Expanded(
-                            flex: 8,
-                            child: Stack(children: <Widget>[
-                              SizedBox(
-                                height: 80,
-                                child: Image(
-                                  image: AssetImage("asset/friend.jpg"),
-                                ),
-                              ),
-                            ]),
-                          ),
-                          Expanded(
-                            flex: 10,
-                            child: Text(
-                              '3. Friends',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.grey[300],
-                                  fontSize: 16),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Flexible(
-                            child: Text(
-                              "Finally is basically, physically, mentally namma entertainment channel that presents whatever that we find it awesome in daily life.",
-                              style: TextStyle(
-                                height: 1.3,
-                                fontWeight: FontWeight.w200,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Expanded(
-                            flex: 8,
-                            child: Stack(children: <Widget>[
-                              SizedBox(
-                                height: 80,
-                                child: Image(
-                                  image: AssetImage("asset/room.jpg"),
-                                ),
-                              ),
-                            ]),
-                          ),
-                          Expanded(
-                            flex: 10,
-                            child: Text(
-                              '4. Roomate',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.grey[300],
-                                  fontSize: 16),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Flexible(
-                            child: Text(
-                              "Finally is basically, physically, mentally namma entertainment channel that presents whatever that we find it awesome in daily life.",
-                              style: TextStyle(
-                                height: 1.3,
-                                fontWeight: FontWeight.w200,
-                              ),
-                            ),
-                          ),
-                        ],
+                      DetailsContainer(
+                        image: "asset/room.jpg",
+                        title: '4. Roomate',
                       ),
                     ],
                   ),

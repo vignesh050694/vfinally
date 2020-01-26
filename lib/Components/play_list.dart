@@ -9,7 +9,7 @@ class PlayList extends StatelessWidget {
 
   Widget getImages(image) {
     return Padding(
-      padding: const EdgeInsets.all(3.0),
+      padding: const EdgeInsets.all(1.5),
       child: Image(
         image: AssetImage(image),
       ),
@@ -22,7 +22,7 @@ class PlayList extends StatelessWidget {
         onTap: onPress,
         child: Container(
           margin: EdgeInsets.only(top: 3.0),
-          height: 100,
+          height: 70,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: List.generate(images.length,(index){
