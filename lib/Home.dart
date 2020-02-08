@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                       dotSize: 4.0,
                       dotSpacing: 13.0,
-                      dotColor: Colors.grey,
+                      dotColor: Colors.red,
                       indicatorBgPadding: 0.0,
                       dotBgColor: Colors.grey.withOpacity(0.0),
                       borderRadius: true,

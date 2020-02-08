@@ -17,17 +17,17 @@ class PreviewImage extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               Container(
-                width: 80.0,
-                height: 80.0,
-                decoration: new BoxDecoration(
+                width: 100.0,
+                height: 100.0,
+                decoration:  BoxDecoration(
                   color: const Color(0xff7c94b6),
-                  image: new DecorationImage(
+                  image:  DecorationImage(
                     image: AssetImage(image),
                     fit: BoxFit.cover,
                   ),
-                  borderRadius: new BorderRadius.all(new Radius.circular(50.0)),
-                  border: new Border.all(
-                    color:  Colors.redAccent,
+                  borderRadius:  BorderRadius.all( Radius.circular(50.0)),
+                  border:  Border.all(
+                    color:  Colors.white,
                     width: 1.5,
                   ),
                 ),
