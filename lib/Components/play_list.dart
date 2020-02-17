@@ -22,7 +22,7 @@ class PlayList extends StatelessWidget {
         onTap: onPress,
         child: Container(
           margin: EdgeInsets.only(top: 3.0),
-          height: 70,
+          height: 75,
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: List.generate(images.length,(index){

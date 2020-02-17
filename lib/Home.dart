@@ -23,9 +23,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   void onTabTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
+    if(index == 1){
+      Navigator.pushNamed(context, '/settings');
+    }
   }
 
   @override
@@ -99,28 +99,28 @@ class _HomePageState extends State<HomePage> {
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
                       PreviewImage(
-                        image: "asset/friend.jpg",
+                        image: "asset/d2.jpg",
                         titleImage: "asset/delivery.png",
                         onPress: () {
                           Navigator.pushNamed(context, '/detail');
                         },
                       ),
                       PreviewImage(
-                        image: "asset/bad.jpg",
+                        image: "asset/d1.jpg",
                         titleImage: "asset/parents.png",
                         onPress: () {
                           Navigator.pushNamed(context, '/detail');
                         },
                       ),
                       PreviewImage(
-                        image: "asset/doc.jpg",
+                        image: "asset/d3.jpg",
                         titleImage: "asset/roomate.png",
                         onPress: () {
                           Navigator.pushNamed(context, '/detail');
                         },
                       ),
                       PreviewImage(
-                        image: "asset/banner.jpg",
+                        image: "asset/n2.jpg",
                         titleImage: "asset/delivery.png",
                         onPress: () {
                           Navigator.pushNamed(context, '/detail');
@@ -190,6 +190,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 PlayList(
                   images: images,
+                  onPress: () {
+                    Navigator.pushNamed(context, '/detail');
+                  },
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 13.0),
@@ -203,6 +206,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 PlayList(
                   images: images,
+                  onPress: () {
+                    Navigator.pushNamed(context, '/detail');
+                  },
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 13.0),
@@ -216,6 +222,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 PlayList(
                   images: images,
+                  onPress: () {
+                    Navigator.pushNamed(context, '/detail');
+                  },
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 13.0),
@@ -229,6 +238,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 PlayList(
                   images: images,
+                  onPress: () {
+                    Navigator.pushNamed(context, '/detail');
+                  },
                 ),
               ],
             )

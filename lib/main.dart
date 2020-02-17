@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:vfinally/Components/series_details.dart';
 import 'package:vfinally/Home.dart';
-import 'package:vfinally/screens/chewie_player.dart';
 import 'package:vfinally/screens/finally_player.dart';
+import 'package:vfinally/screens/search_screen.dart';
 
 void main() => runApp(HomeScreen());
 
@@ -16,13 +16,15 @@ class HomeScreen extends StatelessWidget {
         primaryColor: Color(0xFF000000),
         scaffoldBackgroundColor: Color(0xFF000000),
       ),
-      home: new SplashScreen(),
+      initialRoute: '/',
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => HomePage(),
         // When navigating to the "/second" route, build the SecondScreen widget.
+        '/': (context) => HomePage(),
+        '/home': (context) => HomePage(),
         '/video': (context) => FinallyDemo(),
-        '/detail':(context) => SeriesDetails()
+        '/detail':(context) => SeriesDetails(),
+        '/settings':(context) => SettingsPage(),
       },
     );
   }
@@ -41,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   startTime() async {
-    var _duration = new Duration(seconds: 3);
+    var _duration = new Duration(seconds: 1);
     return new Timer(_duration, navigationPage);
   }
 
@@ -53,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return new Scaffold(
       body: new Center(
-        child: new Image.asset('asset/uber.gif'),
+        child: new Image.asset('asset/netflix.jpg'),
       ),
     );
   }

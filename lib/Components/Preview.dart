@@ -33,7 +33,7 @@ class PreviewImage extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 40,
+                top: 52,
                 left: 2,
                 right: 2,
                 child: Image(
