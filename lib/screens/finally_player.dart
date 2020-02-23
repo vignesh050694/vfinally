@@ -1,5 +1,6 @@
 import 'package:chewie/chewie.dart';
 import 'package:flutter/services.dart';
+import 'package:vfinally/screens/FinallyControls.dart';
 import 'package:wakelock/wakelock.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -38,23 +39,24 @@ class _FinallyDemoState extends State<FinallyDemo> {
     Wakelock.enable();
 
     super.initState();
-    _videoPlayerController1 = VideoPlayerController.network(
-        'https://vfinally.s3.ap-south-1.amazonaws.com/output/Singlesh/single.m3u8');
-    _chewieController = ChewieController(
-      videoPlayerController: _videoPlayerController1,
-      aspectRatio: 16 / 9,
-      autoPlay: true,
-      looping: true,
-    );
+    /*_videoPlayerController1 = VideoPlayerController.network(
+        'https://vfinally.s3.ap-south-1.amazonaws.com/output/Singlesh/single.m3u8'); */
 
-    _chewieController.enterFullScreen();
+    _videoPlayerController1 = VideoPlayerController.network(
+        ' https://vfinally.s3.amazonaws.com/output/Singlesh/single.m3u8');
+
+  }
+
+  double _calculateAspectRatio(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final width = size.width-20;
+    final height = size.height-100;
+
+    return width > height ? width / height : height / width;
   }
 
   @override
   void dispose() {
-    _videoPlayerController1.dispose();
-    _chewieController.dispose();
-
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeRight,
       DeviceOrientation.landscapeLeft,
@@ -62,6 +64,8 @@ class _FinallyDemoState extends State<FinallyDemo> {
       DeviceOrientation.portraitDown,
     ]);
 
+    _videoPlayerController1.dispose();
+    _chewieController.dispose();
     Wakelock.disable();
 
     super.dispose();
@@ -69,6 +73,14 @@ class _FinallyDemoState extends State<FinallyDemo> {
 
   @override
   Widget build(BuildContext context) {
+    _chewieController = ChewieController(
+      videoPlayerController: _videoPlayerController1,
+      aspectRatio: 16/9,
+      autoPlay: true,
+      looping: true,
+      customControls: FinallyControls(backgroundColor: Colors.black,iconColor: Colors.white)
+    );
+    _chewieController.enterFullScreen();
     return MaterialApp(
       title: widget.title,
       theme: ThemeData.dark().copyWith(

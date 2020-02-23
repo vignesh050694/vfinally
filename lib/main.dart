@@ -16,11 +16,10 @@ class HomeScreen extends StatelessWidget {
         primaryColor: Color(0xFF000000),
         scaffoldBackgroundColor: Color(0xFF000000),
       ),
-      initialRoute: '/',
+      home: SplashScreen(),
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
         // When navigating to the "/second" route, build the SecondScreen widget.
-        '/': (context) => HomePage(),
         '/home': (context) => HomePage(),
         '/video': (context) => FinallyDemo(),
         '/detail':(context) => SeriesDetails(),
@@ -53,9 +52,24 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new Center(
-        child: new Image.asset('asset/netflix.jpg'),
+    return Scaffold(
+      body: Center(
+        child:  Container(
+          width: 100.0,
+          height: 100.0,
+          decoration:  BoxDecoration(
+            color: const Color(0xff7c94b6),
+            image:  DecorationImage(
+              image: AssetImage('asset/logo.png'),
+              fit: BoxFit.cover,
+            ),
+            borderRadius:  BorderRadius.all( Radius.circular(50.0)),
+            border:  Border.all(
+              color:  Colors.white,
+              width: 1.5,
+            ),
+          ),
+        ),
       ),
     );
   }
