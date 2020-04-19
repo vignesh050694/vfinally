@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:vfinally/Components/series_details.dart';
 import 'package:vfinally/Home.dart';
 import 'package:vfinally/screens/finally_player.dart';
+import 'package:vfinally/screens/hero-animation.dart';
+import 'package:vfinally/screens/more-menu.dart';
 import 'package:vfinally/screens/search_screen.dart';
+import 'package:vfinally/screens/team.dart';
 
 void main() => runApp(HomeScreen());
 
@@ -24,6 +27,9 @@ class HomeScreen extends StatelessWidget {
         '/video': (context) => FinallyDemo(),
         '/detail':(context) => SeriesDetails(),
         '/settings':(context) => SettingsPage(),
+        '/more':(context) => SettingsMenu(),
+        '/team':(context) => Team(),
+        '/hero':(context) => HeroAnimation(),
       },
     );
   }

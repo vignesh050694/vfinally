@@ -25,6 +25,8 @@ class _HomePageState extends State<HomePage> {
   void onTabTapped(int index) {
     if(index == 1){
       Navigator.pushNamed(context, '/settings');
+    }else  if(index == 2){
+      Navigator.pushNamed(context, '/more');
     }
   }
 

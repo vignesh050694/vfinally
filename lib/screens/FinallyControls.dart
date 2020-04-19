@@ -57,6 +57,14 @@ class _FinallyControlsState extends State<FinallyControls> {
             );
     }
 
+    if(!_latestValue.isPlaying){
+      return Center(
+          child: CircularProgressIndicator(),
+      );
+    }else{
+      print("***********************here");
+    }
+
     final backgroundColor = widget.backgroundColor;
     final iconColor = widget.iconColor;
     chewieController = ChewieController.of(context);
@@ -116,7 +124,10 @@ class _FinallyControlsState extends State<FinallyControls> {
   }
 
   Expanded _buildHitArea() {
-    return Expanded(child: _buildCenterArea());
+    return Expanded(
+        child:
+        _buildCenterArea()
+    );
     /* return Expanded(
       child: GestureDetector(
         onTap: _latestValue != null && _latestValue.isPlaying
@@ -201,8 +212,8 @@ class _FinallyControlsState extends State<FinallyControls> {
                         _buildPosition(iconColor),
                         _buildProgressBar(),
                         _buildRemaining(iconColor),
-                        _buildExpandButton(
-                            backgroundColor, iconColor, barHeight, 10.0)
+                       /* _buildExpandButton(
+                            backgroundColor, iconColor, barHeight, 10.0) */
                       ],
                     ),
             ),
